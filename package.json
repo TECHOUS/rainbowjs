@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Gaurav Walia <gauravwalia019@gmail.com>",
-  "license": "MIT"
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
 }

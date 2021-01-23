@@ -1,0 +1,4 @@
+# ignore files for rainbow library
+
+*.idea
+node_modules/

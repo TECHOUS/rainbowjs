@@ -64,11 +64,11 @@ module.exports = class Rainbow{
     /**
      * this function will check whether the format passed is correct or not
      *
-     * @param format checking format
+     * @param format FORMATS (reset, bold, italic, underline, blink, cut, doubleline, overline, hidden)
      * @return boolean
      **/
     checkFormat(format){
-        if(format==null || format===""){
+        if(format===null || format===''){
             return false;
         }
         switch(format){
@@ -89,11 +89,11 @@ module.exports = class Rainbow{
     /**
      * this function will check whether the color passed is correct or not
      *
-     * @param color to check
+     * @param color COLORS (D, Lg, Mg, Dg, Lr, Dr, Lw, Dw, Lb, Db, Lc, Dc, o, b, m, y, l, p)
      * @return boolean
      **/
     checkColor(color){
-        if(color==null || color===""){
+        if(color===null || color===''){
             return false;
         }
         switch(color){
@@ -123,11 +123,11 @@ module.exports = class Rainbow{
     /**
      * this function will check whether the background is correct or not
      *
-     * @param background
+     * @param backgrounds (dgreen, lgreen, mgreen, dred, lred, dorange, lorange, lblue, lwhite, dwhite, lemon, dpink, lpink, mpink)
      * @return boolean
      **/
     checkBG(background){
-        if(background==null || background===""){
+        if(background===null || background===''){
             return false;
         }
         switch(background){
@@ -154,6 +154,9 @@ module.exports = class Rainbow{
      * This function will return the color code from Rain map
      *
      * @param key
+     * FORMATS (reset, bold, italic, underline, blink, cut, doubleline, overline, hidden)
+     * COLORS (D, Lg, Mg, Dg, Lr, Dr, Lw, Dw, Lb, Db, Lc, Dc, o, b, m, y, l, p)
+     * BACKGROUNDS (dgreen, lgreen, mgreen, dred, lred, dorange, lorange, lblue, lwhite, dwhite, lemon, dpink, lpink, mpink)
      * @return the color code from Rain map
      **/
     getRain(key){
