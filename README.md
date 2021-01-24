@@ -10,26 +10,32 @@ Node JS Minimalist Library for making colorful terminal experiences.
 
 ## Installation
 
+```shell
+yarn add @techous/rainbowjs
+# or
+npm install @techous/rainbowjs
+```
+
 ### Quick Setup
 
 For quickly using this library you can follow the below commands
 
-```bash
+```shell
 # clone the repository
 git clone https://github.com/TechOUs/rainbowjs.git
 ```
 
-## Documentation
-
-### Usage
+## Usage
 
 ```javascript
-const Rainbow = require('rainbowjs');
+const Rainbow = require('@techous/rainbowjs');
 const rainbow = new Rainbow();
 
 // rainbow.<INSTANCE METHOD>
 // Follow the documentation for all the instance methods
 ```
+
+## Documentation
 
 ## Contribution
 

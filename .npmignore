@@ -1,0 +1,5 @@
+# ignore files for published package
+
+.github/
+.travis.yml
+test/

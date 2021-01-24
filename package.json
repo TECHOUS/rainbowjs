@@ -13,5 +13,12 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "techous",
+    "rainbow",
+    "rainbowjs",
+    "colorful terminal",
+    "colors"
+  ]
 }
