@@ -2,6 +2,12 @@ const Rainbow = require('../');
 const rainbow = new Rainbow();
 const assert = require('assert')
 
+console.log(rainbow.getFormatColorString('bold','Dc','#####     #     ##### #   # ####  ##### #   #      # #####',true));
+console.log(rainbow.getFormatColorString('bold','Dc','#   #    # #      #   ##  # #   # #   # #   #      # #    ',true));
+console.log(rainbow.getFormatColorString('bold','Dc','#####   #####     #   # # # ####  #   # # # #      # #####',true));
+console.log(rainbow.getFormatColorString('bold','Dc','#  #   #     #    #   #  ## #   # #   # ## ##  #   #     #',true));
+console.log(rainbow.getFormatColorString('bold','Dc','#   # #       # ##### #   # ####  ##### #   #   ###  #####',true));
+
 describe('checking instance', ()=>{
     it('rainbow instance should have the predefined map data',()=>{
         assert.equal(true, rainbow.Rain.size>=1);

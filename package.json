@@ -1,5 +1,5 @@
 {
-  "name": "rainbowjs",
+  "name": "@techous/rainbowjs",
   "description": "Library to show colorful text on nodejs terminal",
   "version": "1.0.0",
   "main": "src/index.js",
