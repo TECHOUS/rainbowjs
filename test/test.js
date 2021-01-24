@@ -1,4 +1,4 @@
-const Rainbow = require('../src/Rainbow');
+const Rainbow = require('../');
 const rainbow = new Rainbow();
 const assert = require('assert')
 
