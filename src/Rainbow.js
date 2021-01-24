@@ -176,7 +176,7 @@ module.exports = class Rainbow{
      * @return rainbowed codes
      **/
     get(value){
-        if(value == null){
+        if(value === null){
             return null;
         }
         switch(value){
@@ -273,7 +273,7 @@ module.exports = class Rainbow{
      * @return background color codes
      **/
     getBG(background){
-        if(checkBG(background)){
+        if(this.checkBG(background)){
             let result = '';
             result += this.START_STRING
             result += this.getRain(background)
@@ -331,7 +331,7 @@ module.exports = class Rainbow{
      * @return colored bacground code
      **/
     getColorBG(color, background){
-        if(checkColor(color) && checkBG(background)){
+        if(this.checkColor(color) && this.checkBG(background)){
             let result = ''
             result += this.START_STRING
             result += this.getRain(color);
@@ -418,7 +418,7 @@ module.exports = class Rainbow{
      * @return filled background string
      **/
     getBGString(background, str, end){
-        let backgroundCode = getBG(background);
+        let backgroundCode = this.getBG(background);
         if(backgroundCode!=null){
             let result = ''
             result += backgroundCode
@@ -451,7 +451,7 @@ module.exports = class Rainbow{
             }
             return result
         }
-        return null;
+        return str;
     }
 
     /**
@@ -474,7 +474,7 @@ module.exports = class Rainbow{
             }
             return result
         }
-        return null;
+        return str;
     }
 
     /**
@@ -497,7 +497,7 @@ module.exports = class Rainbow{
             }
             return result
         }
-        return null;
+        return str;
     }
 
     /**
@@ -521,6 +521,6 @@ module.exports = class Rainbow{
             }
             return result
         }
-        return null;
+        return str;
     }
 }
