@@ -1,7 +1,7 @@
 {
   "name": "@techous/rainbowjs",
   "description": "Library to show colorful text on nodejs terminal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "author": "Gaurav Walia <gauravwalia019@gmail.com>",
   "scripts": {
