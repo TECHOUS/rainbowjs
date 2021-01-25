@@ -1,4 +1,7 @@
-# Rainbow JS
+<p align="center">
+    <img src="./logos/icon100x100.png" alt="rainbowjs logo" />
+    <h1 align="center">Rainbow JS</h1>
+</p>
 
 Node JS Minimalist Library for making colorful terminal experiences.
 
@@ -7,6 +10,7 @@ Node JS Minimalist Library for making colorful terminal experiences.
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/TechOUs/rainbowjs?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TechOUs/rainbowjs?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/TechOUs/rainbowjs?style=for-the-badge)
+![npm](https://img.shields.io/npm/dw/@techous/rainbowjs?style=for-the-badge)
 
 ## Installation
 
@@ -23,6 +27,8 @@ For quickly using this library you can follow the below commands
 ```shell
 # clone the repository
 git clone https://github.com/TechOUs/rainbowjs.git
+
+# After this you will get a folder (js module) that you can use in your project
 ```
 
 ## Usage
@@ -37,9 +43,11 @@ const rainbow = new Rainbow();
 
 ## Documentation
 
+Coming Soon!
+
 ## Contribution
 
-For contribution guidelines please follow [this guide](.github/CONTRIBUTING.md)
+For contribution guidelines please follow [this guide](https://github.com/TechOUs/rainbowjs/blob/master/.github/CONTRIBUTING.md)
 
 ## LICENSE
 

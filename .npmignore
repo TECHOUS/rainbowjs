@@ -3,3 +3,8 @@
 .github/
 .travis.yml
 test/
+.idea/
+logos/icon.png
+logos/icon150x150.png
+logos/icon192x200.png
+logos/square.jpg
