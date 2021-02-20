@@ -1,297 +1,320 @@
 const Rainbow = require('../');
 const rainbow = new Rainbow();
-const assert = require('assert')
+const Alphabet = require('../src/Alphabet');
+const alpha = new Alphabet();
+const assert = require('assert');
 
-console.log(rainbow.getFormatColorString('bold','Dc','#####     #     ##### #   # ####  ##### #   #      # #####',true));
-console.log(rainbow.getFormatColorString('bold','Dc','#   #    # #      #   ##  # #   # #   # #   #      # #    ',true));
-console.log(rainbow.getFormatColorString('bold','Dc','#####   #####     #   # # # ####  #   # # # #      # #####',true));
-console.log(rainbow.getFormatColorString('bold','Dc','#  #   #     #    #   #  ## #   # #   # ## ##  #   #     #',true));
-console.log(rainbow.getFormatColorString('bold','Dc','#   # #       # ##### #   # ####  ##### #   #   ###  #####',true));
+rainbow.getRainbowStringFromObject({
+    formats: ['bold','blink'],
+    color: 'Dc',
+    end: true,
+    println: true,
+    str: alpha.getString('#','RAINBOW JS',' ') 
+})
 
 describe('checking instance', ()=>{
     it('rainbow instance should have the predefined map data',()=>{
-        assert.equal(true, rainbow.Rain.size>=1);
+        assert.strictEqual(true, rainbow.colorsMap.size>=1);
     })
 })
 
 describe('function: checkFormat',()=>{
     it('null check', ()=>{
-        assert.equal(false, rainbow.checkFormat(null));
+        assert.strictEqual(false, rainbow.checkFormat(null));
     })
     it('empty check', ()=>{
-        assert.equal(false, rainbow.checkFormat(''));
+        assert.strictEqual(false, rainbow.checkFormat(''));
     })
     it('value check', ()=>{
-        assert.equal(true, rainbow.checkFormat('blink'));
+        assert.strictEqual(true, rainbow.checkFormat('blink'));
     })
     it('wrong value check', ()=>{
-        assert.equal(false, rainbow.checkFormat('null'));
+        assert.strictEqual(false, rainbow.checkFormat('null'));
     })
 })
 
 describe('function: checkColor',()=>{
     it('null check', ()=>{
-        assert.equal(false, rainbow.checkColor(null));
+        assert.strictEqual(false, rainbow.checkColor(null));
     })
     it('empty check', ()=>{
-        assert.equal(false, rainbow.checkColor(''));
+        assert.strictEqual(false, rainbow.checkColor(''));
     })
     it('value check', ()=>{
-        assert.equal(true, rainbow.checkColor('Lw'));
+        assert.strictEqual(true, rainbow.checkColor('Lw'));
     })
     it('wrong value check', ()=>{
-        assert.equal(false, rainbow.checkColor('null'));
+        assert.strictEqual(false, rainbow.checkColor('null'));
     })
 })
 
-describe('function: checkBG',()=>{
+describe('function: checkBackground',()=>{
     it('null check', ()=>{
-        assert.equal(false, rainbow.checkBG(null));
+        assert.strictEqual(false, rainbow.checkBackground(null));
     })
     it('empty check', ()=>{
-        assert.equal(false, rainbow.checkBG(''));
+        assert.strictEqual(false, rainbow.checkBackground(''));
     })
     it('value check', ()=>{
-        assert.equal(true, rainbow.checkBG('mgreen'));
+        assert.strictEqual(true, rainbow.checkBackground('mgreen'));
     })
     it('wrong value check', ()=>{
-        assert.equal(false, rainbow.checkBG('null'));
+        assert.strictEqual(false, rainbow.checkBackground('null'));
     })
 })
 
-describe('function: getRain',()=>{
+describe('function: getColorIdFromMap',()=>{
     it('null check', ()=>{
-        assert.equal(null, rainbow.getRain(null));
+        assert.strictEqual(null, rainbow.getColorIdFromMap(null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getRain(''));
+        assert.strictEqual(null, rainbow.getColorIdFromMap(''));
     })
     it('value check', ()=>{
-        assert.equal('100', rainbow.getRain('mgreen'));
+        assert.strictEqual('100', rainbow.getColorIdFromMap('mgreen'));
     })
 })
 
-describe('function: get',()=>{
+describe('function: getAvailableCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.get(null));
+        assert.strictEqual(null, rainbow.getAvailableCode(null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.get(''));
+        assert.strictEqual(null, rainbow.getAvailableCode(''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.get('hello'));
+        assert.strictEqual(null, rainbow.getAvailableCode('hello'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[43m', rainbow.get('dorange'));
+        assert.strictEqual('\u001b[43m', rainbow.getAvailableCode('dorange'));
     })
 })
 
-describe('function: getFormat',()=>{
+describe('function: getFormatCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormat(null));
+        assert.strictEqual(null, rainbow.getFormatCode(null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getFormat(''));
+        assert.strictEqual(null, rainbow.getFormatCode(''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getFormat('hello'));
+        assert.strictEqual(null, rainbow.getFormatCode('hello'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[3m', rainbow.getFormat('italic'));
+        assert.strictEqual('\u001b[3m', rainbow.getFormatCode('italic'));
     })
 })
 
-describe('function: getColor',()=>{
+describe('function: getColorCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getColor(null));
+        assert.strictEqual(null, rainbow.getColorCode(null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getColor(''));
+        assert.strictEqual(null, rainbow.getColorCode(''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getColor('hello'));
+        assert.strictEqual(null, rainbow.getColorCode('hello'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[90m', rainbow.getColor('Dg'));
+        assert.strictEqual('\u001b[90m', rainbow.getColorCode('Dg'));
     })
 })
 
-describe('function: getBG',()=>{
+describe('function: getBackgroundCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getBG(null));
+        assert.strictEqual(null, rainbow.getBackgroundCode(null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getBG(''));
+        assert.strictEqual(null, rainbow.getBackgroundCode(''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getBG('hello'));
+        assert.strictEqual(null, rainbow.getBackgroundCode('hello'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[43m', rainbow.getBG('dorange'));
+        assert.strictEqual('\u001b[43m', rainbow.getBackgroundCode('dorange'));
     })
 })
 
-describe('function: getFormatColor',()=>{
+describe('function: getFormatColorCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormatColor(null, null));
+        assert.strictEqual(null, rainbow.getFormatColorCode(null, null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getFormatColor('',''));
+        assert.strictEqual(null, rainbow.getFormatColorCode('',''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getFormatColor('hello','world'));
+        assert.strictEqual(null, rainbow.getFormatColorCode('hello','world'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[1;37m', rainbow.getFormatColor('bold', 'Lw'));
+        assert.strictEqual('\u001b[1;37m', rainbow.getFormatColorCode('bold', 'Lw'));
     })
 })
 
-describe('function: getFormatBG',()=>{
+describe('function: getFormatBgCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormatBG(null, null));
+        assert.strictEqual(null, rainbow.getFormatBgCode(null, null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getFormatBG('',''));
+        assert.strictEqual(null, rainbow.getFormatBgCode('',''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getFormatBG('hello','world'));
+        assert.strictEqual(null, rainbow.getFormatBgCode('hello','world'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[1;40m', rainbow.getFormatBG('bold', 'dgreen'));
+        assert.strictEqual('\u001b[1;40m', rainbow.getFormatBgCode('bold', 'dgreen'));
     })
 })
 
-describe('function: getColorBG',()=>{
+describe('function: getColorBgCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getColorBG(null, null));
+        assert.strictEqual(null, rainbow.getColorBgCode(null, null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getColorBG('',''));
+        assert.strictEqual(null, rainbow.getColorBgCode('',''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getColorBG('hello','world'));
+        assert.strictEqual(null, rainbow.getColorBgCode('hello','world'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[90;40m', rainbow.getColorBG('Dg', 'dgreen'));
+        assert.strictEqual('\u001b[90;40m', rainbow.getColorBgCode('Dg', 'dgreen'));
     })
 })
 
-describe('function: getRainbow',()=>{
+describe('function: getRainbowCode',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getRainbow(null, null, null));
+        assert.strictEqual(null, rainbow.getRainbowCode(null, null, null));
     })
     it('empty check', ()=>{
-        assert.equal(null, rainbow.getRainbow('','', ''));
+        assert.strictEqual(null, rainbow.getRainbowCode('','', ''));
     })
     it('wrong value check', ()=>{
-        assert.equal(null, rainbow.getRainbow('hello','world' ,'three'));
+        assert.strictEqual(null, rainbow.getRainbowCode('hello','world' ,'three'));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[0;99;40m', rainbow.getRainbow('reset', 'D','dgreen'));
+        assert.strictEqual('\u001b[0;99;40m', rainbow.getRainbowCode('reset', 'D','dgreen'));
     })
 })
 
 describe('function: getFormatString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormatString(null,null,null));
+        assert.strictEqual(null, rainbow.getFormatString(null,null,null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getFormatString('','',''));
+        assert.strictEqual('', rainbow.getFormatString('','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('formatted string', rainbow.getFormatString('hello','formatted string',false));
+        assert.strictEqual('formatted string', rainbow.getFormatString('hello','formatted string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[3mformatted string\u001b[0m', rainbow.getFormatString('italic','formatted string', true));
+        assert.strictEqual('\u001b[3mformatted string\u001b[0m', rainbow.getFormatString('italic','formatted string', true));
     })
 })
 
 describe('function: getColorString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getColorString(null,null,null));
+        assert.strictEqual(null, rainbow.getColorString(null,null,null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getColorString('','',''));
+        assert.strictEqual('', rainbow.getColorString('','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('colored string', rainbow.getColorString('hello','colored string',false));
+        assert.strictEqual('colored string', rainbow.getColorString('hello','colored string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[97mcolored string\u001b[0m', rainbow.getColorString('Dw','colored string', true));
+        assert.strictEqual('\u001b[97mcolored string\u001b[0m', rainbow.getColorString('Dw','colored string', true));
     })
 })
 
-describe('function: getBGString',()=>{
+describe('function: getBgString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getBGString(null,null,null));
+        assert.strictEqual(null, rainbow.getBgString(null,null,null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getBGString('','',''));
+        assert.strictEqual('', rainbow.getBgString('','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('string background', rainbow.getBGString('hello','string background',false));
+        assert.strictEqual('string background', rainbow.getBgString('hello','string background',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[44mstring background\u001b[0m', rainbow.getBGString('lblue','string background', true));
+        assert.strictEqual('\u001b[44mstring background\u001b[0m', rainbow.getBgString('lblue','string background', true));
     })
 })
 
 describe('function: getFormatColorString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormatColorString(null,null,null, null));
+        assert.strictEqual(null, rainbow.getFormatColorString(null,null,null, null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getFormatColorString('','','',''));
+        assert.strictEqual('', rainbow.getFormatColorString('','','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('formatted color string', rainbow.getFormatColorString('hello','world','formatted color string',false));
+        assert.strictEqual('formatted color string', rainbow.getFormatColorString('hello','world','formatted color string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[4;91mformatted color string\u001b[0m', rainbow.getFormatColorString('underline','Lr','formatted color string', true));
+        assert.strictEqual('\u001b[4;91mformatted color string\u001b[0m', rainbow.getFormatColorString('underline','Lr','formatted color string', true));
     })
 })
 
-describe('function: getFormatBGString',()=>{
+describe('function: getFormatBgString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getFormatBGString(null,null,null, null));
+        assert.strictEqual(null, rainbow.getFormatBgString(null,null,null, null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getFormatBGString('','','',''));
+        assert.strictEqual('', rainbow.getFormatBgString('','','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('formatted background string', rainbow.getFormatBGString('hello','world','formatted background string',false));
+        assert.strictEqual('formatted background string', rainbow.getFormatBgString('hello','world','formatted background string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[4;101mformatted background string\u001b[0m', rainbow.getFormatBGString('underline','lred','formatted background string', true));
+        assert.strictEqual('\u001b[4;101mformatted background string\u001b[0m', rainbow.getFormatBgString('underline','lred','formatted background string', true));
     })
 })
 
-describe('function: getColorBGString',()=>{
+describe('function: getColorBgString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getColorBGString(null,null,null, null));
+        assert.strictEqual(null, rainbow.getColorBgString(null,null,null, null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getColorBGString('','','',''));
+        assert.strictEqual('', rainbow.getColorBgString('','','',''));
     })
     it('wrong value check', ()=>{
-        assert.equal('colored background string', rainbow.getColorBGString('hello','world','colored background string',false));
+        assert.strictEqual('colored background string', rainbow.getColorBgString('hello','world','colored background string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[99;101mcolored background string\u001b[0m', rainbow.getColorBGString('D','lred','colored background string', true));
+        assert.strictEqual('\u001b[99;101mcolored background string\u001b[0m', rainbow.getColorBgString('D','lred','colored background string', true));
     })
 })
 
 describe('function: getRainbowString',()=>{
     it('null check',()=>{
-        assert.equal(null, rainbow.getRainbowString(null,null,null, null, null));
+        assert.strictEqual(null, rainbow.getRainbowString(null,null,null, null, null));
     })
     it('empty check', ()=>{
-        assert.equal('', rainbow.getRainbowString('','','','', ''));
+        assert.strictEqual('', rainbow.getRainbowString('','','','', ''));
     })
     it('wrong value check', ()=>{
-        assert.equal('rainbowed string', rainbow.getRainbowString('hello','world','three','rainbowed string',false));
+        assert.strictEqual('rainbowed string', rainbow.getRainbowString('hello','world','three','rainbowed string',false));
     })
     it('value check', ()=>{
-        assert.equal('\u001b[1;97;42mrainbowed string\u001b[0m', rainbow.getRainbowString('bold','Dw','lgreen','rainbowed string', true));
+        assert.strictEqual('\u001b[1;97;42mrainbowed string\u001b[0m', rainbow.getRainbowString('bold','Dw','lgreen','rainbowed string', true));
+    })
+})
+
+describe('checking function: getRainbowStringFromObject', ()=>{
+    it('null check',()=>{
+        assert.strictEqual(null, rainbow.getRainbowStringFromObject({
+            formats: null,
+            color: null,
+            background: null,
+            str: null
+        }));
+    })
+    it('empty check',()=>{
+        assert.strictEqual(null, rainbow.getRainbowStringFromObject({
+            formats: [],
+            color: '',
+            background: '',
+            str: ''
+        }));
     })
 })

@@ -371,7 +371,7 @@ module.exports = class Rainbow{
      * {
      *     formats: ['bold','blink'],
      *     color: '',
-     *     background: ''
+     *     bg: ''
      *     str: 'string to add the color' // ['first','second']
      *     end: true/false
      *     print: true/false

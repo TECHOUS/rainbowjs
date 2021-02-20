@@ -4,7 +4,9 @@
 .travis.yml
 test/
 .idea/
+.vscode/
 logos/icon.png
 logos/icon150x150.png
 logos/icon192x200.png
 logos/square.jpg
+.yarnclean
