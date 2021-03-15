@@ -836,7 +836,7 @@ alphabetsMap.set(' ', getSpace);
  * @return array of strings
  * @author Gaurav Walia
  **/
-const getString = (char, str, delimeter) => {
+export const getString = (char, str, delimeter) => {
     let resultArray = [];
     if (
         char === null ||
@@ -867,14 +867,9 @@ const getString = (char, str, delimeter) => {
  * @param delimeter char to be used between the alphabets
  * @author Gaurav Walia
  **/
-const printString = (char, str, delimeter) => {
+export const printString = (char, str, delimeter) => {
     const resultArray = getString(char, str, delimeter);
     if(resultArray.length>0){
         console.log(resultArray.join('\n'));
     }
-}
-
-module.exports = {
-    getString,
-    printString
 }

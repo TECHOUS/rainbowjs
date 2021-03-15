@@ -15,3 +15,5 @@ describe('testing alphabet lib', () => {
         assert.strictEqual('####  \n    # \n #### \n #  # \n #####', Alphabet.getString('#', 'a', ' ').join('\n'));
     });
 });
+
+Alphabet.printString('#', 'Tests', '  ');

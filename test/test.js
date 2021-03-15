@@ -3,8 +3,8 @@ const Alphabet = require('../src/Alphabet');
 const assert = require('assert');
 
 Rainbow.getRainbowStringFromObject({
-    formats: ['bold','blink'],
-    color: 'Dc',
+    formats: ['bold','blink','italic'],
+    color: 'l',
     end: true,
     println: true,
     str: Alphabet.getString('#','RAINBOW JS',' ') 
