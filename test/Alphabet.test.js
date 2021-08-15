@@ -1,5 +1,14 @@
 const Alphabet = require('../src/Alphabet');
 const assert = require('assert');
+const Rainbow = require("../src");
+
+Rainbow.getRainbowStringFromObject({
+    formats: ['bold','blink','italic'],
+    color: 'l',
+    end: true,
+    println: true,
+    str: Alphabet.getString('#','RAINBOW JS',' ')
+})
 
 describe('testing alphabet lib', () => {
     it('function: getString null check', () => {

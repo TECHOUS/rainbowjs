@@ -49,6 +49,11 @@ Coming Soon!
 
 For contribution guidelines please follow [this guide](https://github.com/TechOUs/rainbowjs/blob/master/.github/CONTRIBUTING.md)
 
+```javascript
+// import {checkFormat} from 'https://raw.githubusercontent.com/TechOUs/rainbowjs/master/src/deno/index.js';
+// import {checkFormat} from 'https://cdn.skypack.dev/@techous/rainbowjs'; // test from published package
+```
+
 ## LICENSE
 
 [![GitHub](https://img.shields.io/github/license/TechOUs/rainbowjs?style=for-the-badge)](LICENSE)

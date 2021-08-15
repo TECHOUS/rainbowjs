@@ -1,14 +1,5 @@
-const Rainbow = require('../');
-const Alphabet = require('../src/Alphabet');
+const Rainbow = require('../src');
 const assert = require('assert');
-
-Rainbow.getRainbowStringFromObject({
-    formats: ['bold','blink','italic'],
-    color: 'l',
-    end: true,
-    println: true,
-    str: Alphabet.getString('#','RAINBOW JS',' ') 
-})
 
 describe('function: checkFormat',()=>{
     it('null check', ()=>{
