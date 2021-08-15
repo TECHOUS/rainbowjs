@@ -10,17 +10,17 @@ Rainbow.getRainbowStringFromObject({
     str: Alphabet.getString('#','RAINBOW JS',' ')
 })
 
-describe('testing alphabet lib', () => {
-    it('function: getString null check', () => {
+describe('testing alphabet lib', async () => {
+    it('function: getString null check', async () => {
         assert.strictEqual(0, Alphabet.getString(null,null,null).length);
     });
-    it('function: getString empty check', () => {
+    it('function: getString empty check',async () => {
         assert.strictEqual(0, Alphabet.getString('','','').length);
     });
-    it('function: getString wrong value', () => {
+    it('function: getString wrong value', async () => {
         assert.strictEqual(0, Alphabet.getString('#',['he'],' ').length);
     });
-    it('function: getString right value', () => {
+    it('function: getString right value', async () => {
         assert.strictEqual('####  \n    # \n #### \n #  # \n #####', Alphabet.getString('#', 'a', ' ').join('\n'));
     });
 });
