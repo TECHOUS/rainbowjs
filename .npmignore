@@ -10,3 +10,4 @@ logos/icon150x150.png
 logos/icon192x200.png
 logos/square.jpg
 .yarnclean
+node_modules
