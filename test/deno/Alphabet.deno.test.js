@@ -1,4 +1,4 @@
-import { getString } from "../../src/deno/Alphabet.js";
+import { getString,printString } from "../../src/deno/Alphabet.js";
 import { assertEquals } from "https://deno.land/std@0.104.0/testing/asserts.ts";
 import {getRainbowStringFromObject} from '../../src/deno/index.js'
 
@@ -25,3 +25,5 @@ Deno.test('function: getString wrong value', async ()=>{
 Deno.test('function: getString right value', async ()=>{
     assertEquals('####  \n    # \n #### \n #  # \n #####', getString('#', 'a', ' ').join('\n'));
 })
+
+printString('#', 'Tests', '  ');
